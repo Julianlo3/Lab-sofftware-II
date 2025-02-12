@@ -1,0 +1,4 @@
+edu\co\unicauca\pagos\pagosapppropio\domain\IPago.class
+edu\co\unicauca\pagos\pagosapppropio\PagosAppPropio.class
+edu\co\unicauca\pagos\pagosapppropio\SistemaVenta.class
+edu\co\unicauca\pagos\pagosapppropio\domain\PagoTarjetaCredito.class

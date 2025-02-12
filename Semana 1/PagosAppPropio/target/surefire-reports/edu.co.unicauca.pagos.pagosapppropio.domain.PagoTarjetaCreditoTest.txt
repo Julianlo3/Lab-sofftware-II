@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCreditoTest
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.372 s <<< FAILURE! -- in edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCreditoTest
+edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCreditoTest.testObtenerDetalle -- Time elapsed: 0.016 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCredito.obtenerDetalle()" because "instance" is null
+	at edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCreditoTest.testObtenerDetalle(PagoTarjetaCreditoTest.java:72)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCreditoTest.testProcesar -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCredito.procesar()" because "instance" is null
+	at edu.co.unicauca.pagos.pagosapppropio.domain.PagoTarjetaCreditoTest.testProcesar(PagoTarjetaCreditoTest.java:59)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

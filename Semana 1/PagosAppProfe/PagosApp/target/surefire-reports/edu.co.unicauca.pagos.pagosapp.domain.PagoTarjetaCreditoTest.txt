@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: edu.co.unicauca.pagos.pagosapp.domain.PagoTarjetaCreditoTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.093 s <<< FAILURE! - in edu.co.unicauca.pagos.pagosapp.domain.PagoTarjetaCreditoTest
+validarPagoTarjetaCredito  Time elapsed: 0.073 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <2> but was: <3>
+	at edu.co.unicauca.pagos.pagosapp.domain.PagoTarjetaCreditoTest.validarPagoTarjetaCredito(PagoTarjetaCreditoTest.java:28)
+
