@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.NullAndEmptySource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 /**
@@ -22,6 +23,7 @@ public class PagoTarjetaCreditoTest {
     
     public PagoTarjetaCreditoTest() {
     }
+
     
     @Test
     public void createPagoTarjetaCredito() {
@@ -32,6 +34,8 @@ public class PagoTarjetaCreditoTest {
     
     /**
      * Test of validar method, of class PagoTarjetaCredito.
+     * @param idTar
+     * @param valor
      */
     
     @ParameterizedTest
@@ -48,31 +52,25 @@ public class PagoTarjetaCreditoTest {
         assertTrue(pago.validar());
     }
    
-   
-    /**
-     * Test of procesar method, of class PagoTarjetaCredito.
-     */
-    @Test
-    public void testProcesar() {
-        System.out.println("procesar");
-        PagoTarjetaCredito instance = null;
-        instance.procesar();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of obtenerDetalle method, of class PagoTarjetaCredito.
      */
     @Test
-    public void testObtenerDetalle() {
+    public void testObtenerDetalleExitoso() {
         System.out.println("obtenerDetalle");
-        PagoTarjetaCredito instance = null;
-        String expResult = "";
+        PagoTarjetaCredito instance = new PagoTarjetaCredito("1", 10);
+        String expResult = "Pago con tarjeta de crédito - Monto:" + instance.getValor();
         String result = instance.obtenerDetalle();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testObtenerDetalleFallido() {
+        System.out.println("obtenerDetalle");
+        PagoTarjetaCredito instance = new PagoTarjetaCredito("1", 10);
+        String expResult = "Pago con tarjeta de crédito - Monto:" + (instance.getValor() -1) ;
+        String result = instance.obtenerDetalle();
+        assertNotEquals(expResult, result);
     }
 
     /**
@@ -122,5 +120,5 @@ public class PagoTarjetaCreditoTest {
         instance.setValor(valor);
         assertEquals(instance.getValor(),valor);
     }
-    
+
 }

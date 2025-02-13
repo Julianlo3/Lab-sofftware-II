@@ -11,7 +11,7 @@ package edu.co.unicauca.pagos.pagosapppropio.domain;
 public class PagoTarjetaCredito implements IPago {
 
     private String id;
-    double valor;
+    private double valor;
 
     public PagoTarjetaCredito(String idTarjeta, double valorTrans) {
         id = idTarjeta;
@@ -22,17 +22,23 @@ public class PagoTarjetaCredito implements IPago {
     public boolean validar() {
          return !(id.length() < 13 || id.length() > 19 || valor<=0);
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        
     }
 
     @Override
     public void procesar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(validar()){
+            System.out.println("Procesando pago con tarjeta de crédito por:" + valor);
+        }
+        else{
+            System.out.println("Número de tarjeta ó valor inválido");
+        }
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public String obtenerDetalle() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "Pago con tarjeta de crédito - Monto:" + valor;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public String getId() {
