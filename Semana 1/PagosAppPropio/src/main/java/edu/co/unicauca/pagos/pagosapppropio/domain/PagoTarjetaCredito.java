@@ -18,6 +18,9 @@ public class PagoTarjetaCredito implements IPago {
         valor = valorTrans;
     }
 
+  
+  
+
     @Override
     public boolean validar() {
          return !(id.length() < 13 || id.length() > 19 || valor<=0);
@@ -27,7 +30,7 @@ public class PagoTarjetaCredito implements IPago {
     @Override
     public void procesar() {
         if(validar()){
-            System.out.println("Procesando pago con tarjeta de crédito por:" + valor);
+            System.out.println("Procesando pago con tarjeta de crédito " + id + " por: " + valor);
         }
         else{
             System.out.println("Número de tarjeta ó valor inválido");
@@ -37,7 +40,7 @@ public class PagoTarjetaCredito implements IPago {
 
     @Override
     public String obtenerDetalle() {
-        return "Pago con tarjeta de crédito - Monto:" + valor;
+        return "Pago realizado con tarjeta de crédito - Monto:" + valor;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

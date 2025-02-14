@@ -1,9 +1,12 @@
+package edu.co.unicauca.pagos.pagosapppropio.domain;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
  */
-package edu.co.unicauca.pagos.pagosapppropio.domain;
 
+
+import edu.co.unicauca.pagos.pagosapppropio.domain.PagoCriptomoneda;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,15 +23,13 @@ public class PagoCriptomonedaTest {
     public PagoCriptomonedaTest() {
     }
     
-    
-
     /**
      * Test of validar method, of class PagoCriptomoneda.
      */
     @Test
     public void testValidarFallido() {
         System.out.println("validar");
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzft2ety");
+        PagoCriptomoneda instance = new PagoCriptomoneda("jkslcimush27dgr7smzft2ety",2);
         boolean expResult = false;
         boolean result = instance.validar();
         assertEquals(expResult, result);
@@ -37,7 +38,7 @@ public class PagoCriptomonedaTest {
     @Test
     public void testValidarExitoso() {
         System.out.println("validar");
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzis7ujzhs");
+        PagoCriptomoneda instance = new PagoCriptomoneda("kslcimush27dgr7smzis7ujzhs",10);
         boolean expResult = true;
         boolean result = instance.validar();
         assertEquals(expResult, result);
@@ -49,21 +50,21 @@ public class PagoCriptomonedaTest {
     @Test
     public void testObtenerDetalleFallido() {
         System.out.println("obtenerDetalle");
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzis7ujzhs");
-        String expResult = "Dirección de pago " + instance.getDireccion() + " con id: " + (instance.getIdCripto() +1);
+        PagoCriptomoneda instance = new PagoCriptomoneda("jkslcimush27dgr7smzis7ujzhs",1);
+        String expResult = "Dirección de pago " + instance.getDireccion() + " con valor: " + (instance.getValor()+1);
         String result = instance.obtenerDetalle();
         assertNotEquals(expResult, result);
     }
 
     /**
-     * Test of getIdCripto method, of class PagoCriptomoneda.
+     * Test of GetDireccion method, of class PagoCriptomoneda.
      */
     @Test
-    public void testGetIdCripto() {
+    public void testGetDireccion() {
         System.out.println("getIdCripto");
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzis7ujzhs");
-        String expResult = "1";
-        String result = instance.getIdCripto();
+        PagoCriptomoneda instance = new PagoCriptomoneda("jkslcimush27dgr7smzis7ujzhs",23);
+        String expResult = "jkslcimush27dgr7smzis7ujzhs";
+        String result = instance.getDireccion();
         assertEquals(expResult, result);
     }
 
@@ -71,36 +72,43 @@ public class PagoCriptomonedaTest {
      * Test of setIdCripto method, of class PagoCriptomoneda.
      */
     @Test
-    public void testSetIdCripto() {
-        System.out.println("setIdCripto");
-        String idCripto = "2";
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzis7ujzhs");
-        instance.setIdCripto(idCripto);
-        assertEquals(idCripto,instance.getIdCripto());
+    public void testSetDireccion() {
+        System.out.println("setDireccion");
+        String Direccion = "jkslcimush27dgr7smzis7ujzhss2";
+        PagoCriptomoneda instance = new PagoCriptomoneda("jkslcimush27dgr7smzis7ujzhs",23);
+        instance.setDireccion(Direccion);
+        assertEquals(Direccion,instance.getDireccion());
     }
 
+
+    
+
+
     /**
-     * Test of getDireccion method, of class PagoCriptomoneda.
+     * Test of getValor method, of class PagoCriptomoneda.
      */
     @Test
-    public void testGetDireccion() {
-        System.out.println("getDireccion");
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzis7ujzhs");
-        String expResult = "jkslcimush27dgr7smzis7ujzhs";
-        String result = instance.getDireccion();
+    public void testGetValor() {
+        System.out.println("getValor");
+        PagoCriptomoneda instance = new PagoCriptomoneda("jkslcimush27dgr7smzis7ujzhs",23);
+        double expResult = 23;
+        double result = instance.getValor();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of setDireccion method, of class PagoCriptomoneda.
+     * Test of setValor method, of class PagoCriptomoneda.
      */
     @Test
-    public void testSetDireccion() {
-        System.out.println("setDireccion");
-        String direccion = "jkslcimush27dgr7smzis7ujzhs";
-        PagoCriptomoneda instance = new PagoCriptomoneda("1","jkslcimush27dgr7smzis7ujzhs777");
-        instance.setDireccion(direccion);
-        assertEquals(direccion,instance.getDireccion());
+    public void testSetValor() {
+        System.out.println("setValor");
+        double valor = 45;
+        PagoCriptomoneda instance = new PagoCriptomoneda("jkslcimush27dgr7smzis7ujzhs",23);
+        instance.setValor(valor);
+        assertEquals(valor, instance.getValor());
+        
     }
-    
+
+
 }
+

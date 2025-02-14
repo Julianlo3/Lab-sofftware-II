@@ -59,7 +59,7 @@ public class PagoTarjetaCreditoTest {
     public void testObtenerDetalleExitoso() {
         System.out.println("obtenerDetalle");
         PagoTarjetaCredito instance = new PagoTarjetaCredito("1", 10);
-        String expResult = "Pago con tarjeta de crédito - Monto:" + instance.getValor();
+        String expResult = "Pago realizado con tarjeta de crédito - Monto:" + instance.getValor();
         String result = instance.obtenerDetalle();
         assertEquals(expResult, result);
     }
@@ -68,7 +68,7 @@ public class PagoTarjetaCreditoTest {
     public void testObtenerDetalleFallido() {
         System.out.println("obtenerDetalle");
         PagoTarjetaCredito instance = new PagoTarjetaCredito("1", 10);
-        String expResult = "Pago con tarjeta de crédito - Monto:" + (instance.getValor() -1) ;
+        String expResult = "Pago realizado con tarjeta de crédito - Monto:" + (instance.getValor()-1) ;
         String result = instance.obtenerDetalle();
         assertNotEquals(expResult, result);
     }

@@ -18,8 +18,11 @@ public class SistemaVenta {
     }
     
     public String realizarPago (String iden,double valor){
-        if(pagOption.validar())
+        if(pagOption.validar()){
             pagOption.procesar();
-           return pagOption.obtenerDetalle();
+            return "Pago exitoso:" + pagOption.obtenerDetalle();
+        }
+           pagOption.procesar();
+           return "Pago fallido con: " + pagOption.obtenerDetalle() ;
     }
 }

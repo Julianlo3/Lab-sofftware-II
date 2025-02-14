@@ -1,6 +1,7 @@
 edu\co\unicauca\pagos\pagosapppropio\domain\IPago.class
-edu\co\unicauca\pagos\pagosapppropio\domain\PagoCriptomoneda.class
 edu\co\unicauca\pagos\pagosapppropio\domain\PagoTransferenciaBancaria.class
 edu\co\unicauca\pagos\pagosapppropio\PagosAppPropio.class
-edu\co\unicauca\pagos\pagosapppropio\SistemaVenta.class
 edu\co\unicauca\pagos\pagosapppropio\domain\PagoTarjetaCredito.class
+edu\co\unicauca\pagos\pagosapppropio\domain\PagoCriptomoneda.class
+Mensajes\mensaje.class
+edu\co\unicauca\pagos\pagosapppropio\SistemaVenta.class

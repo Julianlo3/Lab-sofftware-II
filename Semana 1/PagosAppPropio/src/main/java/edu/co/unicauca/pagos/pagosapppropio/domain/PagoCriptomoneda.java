@@ -10,17 +10,17 @@ package edu.co.unicauca.pagos.pagosapppropio.domain;
  */
 public class PagoCriptomoneda implements IPago{
 
-    private String idCripto;
     private String direccion;
+    private double valor;
 
-    public PagoCriptomoneda(String idCripto, String direccion) {
-        this.idCripto = idCripto;
+    public PagoCriptomoneda(String direccion, double valor) {
         this.direccion = direccion;
+        this.valor = valor;
     }
     
     @Override
     public boolean validar() {
-        return (idCripto.length()>0 && direccion.length()>=26);
+        return (direccion.length()>=26 && valor>0);
     }
 
     @Override
@@ -35,15 +35,7 @@ public class PagoCriptomoneda implements IPago{
 
     @Override
     public String obtenerDetalle() {
-        return "Dirección de pago " + direccion + " con id: " +idCripto;
-    }
-
-    public String getIdCripto() {
-        return idCripto;
-    }
-
-    public void setIdCripto(String idCripto) {
-        this.idCripto = idCripto;
+        return "Dirección de pago " + direccion + " con valor: " + valor;
     }
 
     public String getDireccion() {
@@ -52,6 +44,14 @@ public class PagoCriptomoneda implements IPago{
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
     }
     
 }

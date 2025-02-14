@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.co.unicauca.pagos.pagosapppropio.domain.PagoTransferenciaBancariaTest
 -------------------------------------------------------------------------------
-Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.422 s -- in edu.co.unicauca.pagos.pagosapppropio.domain.PagoTransferenciaBancariaTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s -- in edu.co.unicauca.pagos.pagosapppropio.domain.PagoTransferenciaBancariaTest
