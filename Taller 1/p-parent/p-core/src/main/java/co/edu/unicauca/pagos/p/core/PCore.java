@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author lopez
+ * @author Julián Rojas - Andrés Sandino
  */
 public class PCore {
 
@@ -21,7 +21,7 @@ public class PCore {
         while (!scanner.hasNextInt()) { 
             System.out.println("Error, ingrese nuevamente");
             scanner.next();  
-            System.out.print("Ingrese una opción y pulse enter");
+            System.out.print("Ingrese una opcion y pulse enter");
         }
         return scanner.nextInt();
      }
@@ -30,16 +30,13 @@ public class PCore {
     public static void main(String[] args) {
         mensaje mensaje = new mensaje();
         Scanner scanner = new Scanner(System.in);
-        Scanner scanner1 = new Scanner(System.in);
-        //--- Creación de los metodos de pago 
-        
-        
         
         int opcionMenu;
         
         do {
             mensaje.mostrarMensajeBienvenida();
             opcionMenu = obtenerOpcion(scanner);
+            scanner.nextLine();
 
             switch (opcionMenu) {
                 case 0:
@@ -48,9 +45,9 @@ public class PCore {
                 case 1:
                     System.out.println("\n \n ------ Pago con tarjeta ------");
                     System.out.println("Ingrese su # de tarjeta\n");
-                    String numtarjeta = scanner1.nextLine();
+                    String numtarjeta = scanner.nextLine();
                     System.out.println("Ingrese el valor a pagar");
-                    double valor = scanner1.nextDouble();
+                    double valor = scanner.nextDouble();
                     IPago pagoTarjeta = new PagoTarjetaCredito(numtarjeta,valor);
                     SistemaVenta pago = new SistemaVenta(pagoTarjeta);
                     String resultado = pago.realizarPago(numtarjeta, valor);
@@ -59,9 +56,9 @@ public class PCore {
                 case 2:
                     System.out.println("\n \n ------ Pago con transferencia bancaria ------");
                     System.out.println("Ingrese su # de transferencia\n");
-                    String numTrans = scanner1.nextLine();
+                    String numTrans = scanner.nextLine();
                     System.out.println("Ingrese el valor a pagar");
-                    double valorTrans = scanner1.nextDouble();
+                    double valorTrans = scanner.nextDouble();
                     IPago pagoTans = new PagoTransferenciaBancaria(numTrans,valorTrans);
                     SistemaVenta pago2 = new SistemaVenta(pagoTans);
                     String resultado1 = pago2.realizarPago(numTrans, valorTrans);
@@ -70,9 +67,9 @@ public class PCore {
                 case 3:
                     System.out.println("\n \n ------ Pago con criptos ------");
                     System.out.println("Ingrese la direccion\n");
-                    String direccion = scanner1.nextLine();
+                    String direccion = scanner.nextLine();
                     System.out.println("Ingrese el valor");
-                    Double valorCripto = scanner1.nextDouble();
+                    Double valorCripto = scanner.nextDouble();
                     IPago pagoCripto = new PagoCriptomoneda(direccion,valorCripto);
                     SistemaVenta pago3 = new SistemaVenta(pagoCripto);
                     String resultado2 = pago3.realizarPago(direccion, valorCripto);

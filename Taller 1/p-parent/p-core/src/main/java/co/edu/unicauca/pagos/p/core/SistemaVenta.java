@@ -8,7 +8,7 @@ import co.edu.unicauca.pagos.p.common.IPago;
 
 /**
  *
- * @author lopez
+ * @author Julián Rojas - Andrés Sandino
  */
 class SistemaVenta {
     IPago pagOption;

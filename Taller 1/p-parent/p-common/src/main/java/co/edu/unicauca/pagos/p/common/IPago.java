@@ -6,7 +6,7 @@ package co.edu.unicauca.pagos.p.common;
 
 /**
  *
- * @author lopez
+ * @author Julián Rojas - Andrés Sandino
  */
 public interface IPago {
     public boolean validar();

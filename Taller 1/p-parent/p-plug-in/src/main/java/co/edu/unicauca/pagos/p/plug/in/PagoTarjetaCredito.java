@@ -8,7 +8,7 @@ import co.edu.unicauca.pagos.p.common.IPago;
 
 /**
  *
- * @author lopez
+ * @author Julián Rojas - Andrés Sandino
  */
 public class PagoTarjetaCredito implements IPago {
 
@@ -25,24 +25,24 @@ public class PagoTarjetaCredito implements IPago {
 
     @Override
     public boolean validar() {
-         return !(id.length() < 13 || id.length() > 19 || valor<=0);
+         return id.matches("\\d+") && id.length() >= 13 && id.length() <= 19 && valor > 0;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public void procesar() {
         if(validar()){
-            System.out.println("Procesando pago con tarjeta de crédito " + id + " por: " + valor);
+            System.out.println("Procesando pago con tarjeta de credito " + id + " por: " + valor);
         }
         else{
-            System.out.println("Número de tarjeta ó valor inválido");
+            System.out.println("Numero de tarjeta o valor invalido");
         }
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public String obtenerDetalle() {
-        return "Pago realizado con tarjeta de crédito - Monto:" + valor;
+        return "Pago realizado con tarjeta de credito - Monto:" + valor;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

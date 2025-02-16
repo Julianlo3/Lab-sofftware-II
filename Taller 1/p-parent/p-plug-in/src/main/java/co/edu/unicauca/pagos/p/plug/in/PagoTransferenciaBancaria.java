@@ -8,7 +8,7 @@ import co.edu.unicauca.pagos.p.common.IPago;
 
 /**
  *
- * @author lopez
+ * @author Julián Rojas - Andrés Sandino
  */
 public class PagoTransferenciaBancaria implements IPago{
 
@@ -31,7 +31,7 @@ public class PagoTransferenciaBancaria implements IPago{
             System.out.println("Procesando pago con transferencia bamcaria " + numeroCuenta + " por: " + valor);
         }
         else{
-            System.out.println("Numero de tarjeta ó valor inválido");
+            System.out.println("Numero de tarjeta o valor invalido");
         }
     }
 

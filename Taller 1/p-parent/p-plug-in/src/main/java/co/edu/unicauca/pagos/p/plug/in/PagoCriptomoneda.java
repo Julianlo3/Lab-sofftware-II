@@ -8,7 +8,7 @@ import co.edu.unicauca.pagos.p.common.IPago;
 
 /**
  *
- * @author lopez
+ * @author Julián Rojas - Andrés Sandino
  */
 public class PagoCriptomoneda implements IPago{
 
@@ -28,16 +28,16 @@ public class PagoCriptomoneda implements IPago{
     @Override
     public void procesar() {
         if(validar()){
-            System.out.println("Procesando pago de criptos con dirección" + direccion);
+            System.out.println("Procesando pago de criptos con direccion " + direccion);
         }
         else{
-            System.out.println("Error al procesar el pago con cripto, dirección invalida");
+            System.out.println("Error al procesar el pago con cripto, direccion invalida ");
         }
     }
 
     @Override
     public String obtenerDetalle() {
-        return "Dirección de pago " + direccion + " con valor: " + valor;
+        return "Direccion de pago " + direccion + " con valor: " + valor;
     }
 
     public String getDireccion() {
